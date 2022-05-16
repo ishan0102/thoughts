@@ -3,22 +3,85 @@ title: "Code Snippets"
 tags:
 - Software
 - Explainer
-enableToc: false
+enableToc: true
 ---
 
 On this page I plan on documenting all the code snippets I use frequently. I'll use `T` for generic types, `K` for generic keys, and `V` for generic values when necessary. All of this code is written in `Java` since I think it's the most user-friendly.
 
-# `HashMap` Iteration
+# Maps
+
+## `HashMap` Iteration
 ```java
 public void iterateHashMap(HashMap<K, V> map) {
     for (Map.Entry<K, V> entry : map.entrySet()) {
-        entry.getKey();
-        entry.getValue();
+        System.out.println(entry.getKey());
+        System.out.println(entry.getValue());
     }
 }
 ```
 
-# Depth-First Search
+# Trees
+
+## In-Order Traversal
+```java
+public void inOrder(Node root) {
+    if (root == null) {
+        return;
+    }
+
+    inOrder(root.left);
+    System.out.println(root.val);
+    inOrder(root.right);
+}
+```
+
+## Pre-Order Traversal
+```java
+public void preOrder(Node root) {
+    if (root == null) {
+        return;
+    }
+
+    System.out.println(root.val);
+    preOrder(root.left);
+    preOrder(root.right);
+}
+```
+
+## Post-Order Traversal
+```java
+public void postOrder(Node root) {
+    if (root == null) {
+        return;
+    }
+
+    postOrder(root.left);
+    postOrder(root.right);
+    System.out.println(root.val);
+}
+```
+
+## Level-Order Traversal
+```java
+public void levelOrder(Node root) {
+    Queue<Node> queue = new LinkedList<Node>();
+    queue.add(root);
+
+    while (!queue.isEmpty()) {
+        int size = queue.size();
+        for (int i = 0; i < size; i++) {
+            Node curr = queue.poll();
+            System.out.println(curr.val);
+            queue.add(curr.left);
+            queue.add(curr.right);
+        }
+    }
+}
+```
+
+# Graphs
+
+## Depth-First Search
 ```java
 public void dfs(HashSet<Node> visited, Node root) {
     if (root == null) {
@@ -36,7 +99,7 @@ public void dfs(HashSet<Node> visited, Node root) {
 ```
 *This can be done iteratively with a stack instead of recursively.*
 
-# Breadth-First Search
+## Breadth-First Search
 ```java
 public void bfs(Node root) {
     HashSet<Node> visited = new HashSet<>();
@@ -55,7 +118,7 @@ public void bfs(Node root) {
 }
 ```
 
-# Level-Order Traversal
+## Level-Order Traversal
 ```java
 public void levelOrder(Node root) {
     HashSet<Node> visited = new HashSet<>();
@@ -79,3 +142,4 @@ public void levelOrder(Node root) {
 }
 ```
 *Level-order traversals differ from BFS because they keep track of what "step" of the BFS we're currently on. This can be handy for problems where we want to know the length of the shortest path, like [Word Ladder](https://leetcode.com/problems/word-ladder/) or [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)*.
+
