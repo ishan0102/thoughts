@@ -8,9 +8,9 @@ enableToc: true
 
 On this page I plan on documenting all the code snippets I use frequently. I'll use `T` for generic types, `K` for generic keys, and `V` for generic values when necessary. All of this code is written in `Java` since I think it's the most user-friendly.
 
-# Maps
+## Maps
 
-## `HashMap` Iteration
+### `HashMap` Iteration
 ```java
 public void iterateHashMap(HashMap<K, V> map) {
     for (Map.Entry<K, V> entry : map.entrySet()) {
@@ -20,9 +20,9 @@ public void iterateHashMap(HashMap<K, V> map) {
 }
 ```
 
-# Trees
+## Trees
 
-## In-Order Traversal
+### In-Order Traversal
 ```java
 public void inOrder(Node root) {
     if (root == null) {
@@ -35,7 +35,7 @@ public void inOrder(Node root) {
 }
 ```
 
-## Pre-Order Traversal
+### Pre-Order Traversal
 ```java
 public void preOrder(Node root) {
     if (root == null) {
@@ -48,7 +48,7 @@ public void preOrder(Node root) {
 }
 ```
 
-## Post-Order Traversal
+### Post-Order Traversal
 ```java
 public void postOrder(Node root) {
     if (root == null) {
@@ -61,7 +61,7 @@ public void postOrder(Node root) {
 }
 ```
 
-## Level-Order Traversal
+### Level-Order Traversal
 ```java
 public void levelOrder(Node root) {
     Queue<Node> queue = new LinkedList<Node>();
@@ -79,9 +79,9 @@ public void levelOrder(Node root) {
 }
 ```
 
-# Graphs
+## Graphs
 
-## Depth-First Search
+### Depth-First Search
 ```java
 public void dfs(HashSet<Node> visited, Node root) {
     if (root == null) {
@@ -99,7 +99,7 @@ public void dfs(HashSet<Node> visited, Node root) {
 ```
 *This can be done iteratively with a stack instead of recursively.*
 
-## Breadth-First Search
+### Breadth-First Search
 ```java
 public void bfs(Node root) {
     HashSet<Node> visited = new HashSet<>();
@@ -118,7 +118,7 @@ public void bfs(Node root) {
 }
 ```
 
-## Level-Order Traversal
+### Level-Order Traversal
 ```java
 public void levelOrder(Node root) {
     HashSet<Node> visited = new HashSet<>();
