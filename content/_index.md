@@ -10,3 +10,4 @@ Or, browse all of my notes here:
 Here are some of my favorite ones:
 - [Code Snippets](notes/CodeSnippets.md): A collection of code snippets I use frequently.
 - [Bionic Reading](notes/BionicReading.md): Demonstrating a new way to read.
+- [Integral Images](notes/IntegralImages.md): A math principle that's surprisingly powerful when applied to computer vision.
