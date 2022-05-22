@@ -20,13 +20,13 @@ This had us stumped. We considered caching computed sums, but that still require
 
 For example, this is what an original image and its integral image look like:
 
-![Integral Image](images/integral_image_a.png)
+![Integral Image](notes/images/integral_image_a.png)
 
 *Note that the bottom right entry is 12, the sum of all pixels in the image.*
 
 Let's take a more complex example now:
 
-![Integral Image](images/integral_image_b.png)
+![Integral Image](notes/images/integral_image_b.png)
 
 Say we want to compute the sum of this 2x2 region within the 5x5 image. This is trivially easy to compute using the integral image. We start by taking the bottom right corner of the image, 46. This is the sum of the entire region above and to the left of the region we want to compute. Now, we simply subtract 20 and 22 to remove the regions we don't want to find the sum of, and add 10 since we removed the top left region twice. The final computation becomes 46 - 20 - 22 + 10 = 14.
 
