@@ -1,5 +1,5 @@
 ---
-title: Ishan's Garden
+title: Ishan's Cafe
 ---
 
 This is a space for me to grow my thoughts. I plan on adding notes about what I'm currently learning, various software topics I've always wanted to discuss, and other random musings. You can read my notes in a variety of ways. There's an interactive graph at the bottom that lets you see how different notes relate to each other. You can also use `Control` + `K` to search the entire site. 
