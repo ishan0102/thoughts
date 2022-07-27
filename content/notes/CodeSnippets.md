@@ -172,7 +172,7 @@ public void dfs(int[][] grid, int i, int j) {
     dfs(grid, i, j - 1);
 }
 ```
-*This is one of my favorite paradigms since it applies to so many 
+*This is one of my favorite paradigms since it applies to so many different problems.*
 
 
 ## Cool Stuff
