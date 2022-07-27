@@ -10,9 +10,20 @@ On this page I plan on documenting all the code snippets I use frequently. I'll 
 
 ## Maps
 
-### `HashMap` Iteration
+### Frequency Map
 ```java
-public void iterateHashMap(HashMap<K, V> map) {
+public Map<T, Integer> frequencyMap(T[] nums) {
+    Map<T, Integer> map = new HashMap<>();
+    for (T num : nums) {
+        map.put(num, map.getOrDefault(num, 0) + 1);
+    }
+    return map;
+}
+```
+
+### Map Iteration
+```java
+public void iterateMap(HashMap<K, V> map) {
     for (Map.Entry<K, V> entry : map.entrySet()) {
         System.out.println(entry.getKey());
         System.out.println(entry.getValue());
