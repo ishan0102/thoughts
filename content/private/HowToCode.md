@@ -1,5 +1,5 @@
 ---
-title: "How to Learn Programming"
+title: "How to Code"
 tags:
 - Software
 enableToc: false

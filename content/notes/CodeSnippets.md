@@ -141,5 +141,45 @@ public void levelOrder(Node root) {
     }
 }
 ```
-*Level-order traversals differ from BFS because they keep track of what "step" of the BFS we're currently on. This can be handy for problems where we want to know the length of the shortest path, like [Word Ladder](https://leetcode.com/problems/word-ladder/) or [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)*.
+*Level-order traversals differ from BFS because they keep track of what "step" of the BFS we're currently on. This can be handy for problems where we want to know the length of the shortest path, like [Word Ladder](https://leetcode.com/problems/word-ladder/) or [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/).*
 
+## Matrices
+*Note that matrices are a subset of graphs.*
+
+### Number of Islands
+```java
+public void numberOfIslands(int[][] grid) {
+    int numIslands = 0;
+    for (int i = 0; i < grid.length; i++) {
+        for (int j = 0; j < grid[0].length; j++) {
+            if (grid[i][j] == 1) {
+                numIslands++;
+                dfs(grid, i, j);
+            }
+        }
+    }
+}
+
+public void dfs(int[][] grid, int i, int j) {
+    if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == 0) {
+        return;
+    }
+
+    grid[i][j] = 0;
+    dfs(grid, i + 1, j);
+    dfs(grid, i - 1, j);
+    dfs(grid, i, j + 1);
+    dfs(grid, i, j - 1);
+}
+```
+*This is one of my favorite paradigms since it applies to so many 
+
+
+## Cool Stuff
+### YouTube Video Downloader
+```python
+import pytube
+
+video_url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+pytube.YouTube(video_url).streams.first().download()
+```
